@@ -7,6 +7,8 @@ float r=20;
 
 Patch[]patches =new Patch[10];//declare an array(box) of x patches save the memory for the array// Attempt to call Patch class, and store everything in an array where patch numbers are changeable.
 
+
+
 void setup()
 {
   size(800, 800);
@@ -26,13 +28,12 @@ void keyPressed() //wound or hurt
 
 void draw()//
 {
-
-     {
-  stroke(0);
-  fill(218, 192, 17);//yellow
-  rectMode(CENTER);
-  rect(width/2,height/2,r,r);
-  r++;
+  {
+    stroke(0);
+    fill(218, 192, 17);//yellow
+    rectMode(CENTER);
+    rect(width/2, height/2, r, r);
+    r++;
   }
 
   for (int i=0; i<patches.length; i++)//patches
@@ -83,6 +84,8 @@ void draw()//
   }
   endY=endY+1;
   endX=endX+1;
+  
+  
 }
 
 
@@ -90,9 +93,9 @@ void draw()//
 ////patches
 
 
- 
- //void keyPressed()
- //{ 
- //click=true;//grids go away
- //}
- //*/
+
+//void keyPressed()
+//{ 
+//click=true;//grids go away
+//}
+//*/
