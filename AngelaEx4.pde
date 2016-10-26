@@ -5,23 +5,29 @@ float endY=0;
 float endX=0;
 float r=20;
 
-Patch[]patches =new Patch[30];//declare an array(box) of x patches save the memory for the array// Attempt to call Patch class, and store everything in an array where patch numbers are changeable.
+Patch[]patches =new Patch[10];//declare an array(box) of x patches save the memory for the array// Attempt to call Patch class, and store everything in an array where patch numbers are changeable.
 
 void setup()
 {
   size(800, 800);
-  //background(218, 192, 17);//yellow, not working when adding patches, moved to draw
-  for (int i=0; i<patches.length; i++)//patches 10/21/16
+  for (int i=0; i<patches.length; i++)
   {
-    patches[i]=new Patch(100*i, 0, 30, 30);//calling the constructor and give it a value 10/21/16
+    patches[i]=new Patch(100*i, 0, 200, 200);//calling the constructor and give it a value 10/21/16
   }
+  background(255);
 }
-
+void keyPressed() //wound or hurt
+{
+  noStroke();            
+  fill(219, 127, 21, random((100)));
+  rect(-mouseX, -mouseY, 100*(random(1.5)), 100*(random(1.5)));
+  println(2);
+}
 
 void draw()//
 {
-  background(255);
-     {//background(218, 192, 17);//yellow
+
+     {
   stroke(0);
   fill(218, 192, 17);//yellow
   rectMode(CENTER);
@@ -79,29 +85,14 @@ void draw()//
   endX=endX+1;
 }
 
-void mousePressed() 
-{
-  noStroke();
-  fill(193, 187, 219, random((80)));
-  rect(-mouseX, -mouseY, 100*(random(1.5)), 100*(random(1.5)));
-  println(2);
-}
 
 ////color changing on the grids, like healing with plantsx
 ////patches
 
-/*
-// if not click whill run the program, if clicked can move away from the screen.
- //if(x<width)
- Boolean click=false//line switch off
- if (int y=5; y<endY; y+=5); 
- {
- endY=endY-1;
- endX=endX-1;
- }
+
  
- void keyPressed()
- { 
- click=true;//grids go away
- }
- */
+ //void keyPressed()
+ //{ 
+ //click=true;//grids go away
+ //}
+ //*/

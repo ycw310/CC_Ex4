@@ -15,8 +15,8 @@ class Patch//fllowing are attribute of objects, class gives you options to make 
 
   void display() //mathods  of calling the objects
   {
-    strokeWeight(1);
-    fill(193, 187, 219);
+    strokeWeight(0);
+    fill(193, 187, 219, 80);
     rect(x0, y0, x1, y1);
   }
   void descend() //mathods  of calling the objects 10/21/16
@@ -24,6 +24,7 @@ class Patch//fllowing are attribute of objects, class gives you options to make 
     if(y0<785)
     {
       y0++;
+      y0=y0+random(-700,800);
     }
   }
 }
