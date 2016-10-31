@@ -4,17 +4,32 @@
 float endY=0;
 float endX=0;
 float r=20;
+int switchpatch;
 
 Patch[]patches =new Patch[10];//declare an array(box) of x patches save the memory for the array// Attempt to call Patch class, and store everything in an array where patch numbers are changeable.
-
+//OtherPatch[]otherpatch=new OtherPatch[20];
 
 
 void setup()
 {
   size(800, 800);
+
   for (int i=0; i<patches.length; i++)
+    //for (int i=0; i<otherpatch.length; i++)
   {
+    switchpatch=int(random(0,2.99));//
+    if(switchpatch==0){//switch difination
     patches[i]=new Patch(100*i, 0, 200, 200);//calling the constructor and give it a value 10/21/16
+   //otherpatch[i]=new OtherPatch(100+i, 0, 600, 600); //calling OtherPatch inheritance class 10/28/16  
+  }
+  //else if(switchpatch==1){}//runs step by step
+  //else if(switchpatch==2{} 
+  //or use switch option. switch(switchpatch) case 1: do some stuff; case 100:do other switch (I guess it is good for storytelling)
+  
+  
+  else{//catch all the rest
+    patches[i]=new OtherPatch(random(100), 0, 600, 600);
+  }
   }
   background(255);
 }
@@ -35,7 +50,11 @@ void draw()//
     rect(width/2, height/2, r, r);
     r++;
   }
-
+ //for (int i=0; i<otherpatch.length; i++)//otherpatches
+ // {
+ //   otherpatch[i].display();
+ //   otherpatch[i].descend();
+ // }
   for (int i=0; i<patches.length; i++)//patches
   {
     patches[i].display();
